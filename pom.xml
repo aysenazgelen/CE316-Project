@@ -71,6 +71,10 @@
                         <include>**/*Test.java</include>
                         <include>**/*IT.java</include>
                     </includes>
+                    <!-- Isolate tests from the real iae.db: use a throwaway DB under target/ -->
+                    <systemPropertyVariables>
+                        <iae.db.url>jdbc:sqlite:${project.build.directory}/iae-test.db</iae.db.url>
+                    </systemPropertyVariables>
                 </configuration>
             </plugin>
             <plugin>

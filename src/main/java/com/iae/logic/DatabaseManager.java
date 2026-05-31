@@ -45,7 +45,11 @@ public class DatabaseManager {
 
     // ── Connection ────────────────────────────────────────────────────────────
 
-    private static final String DB_URL = "jdbc:sqlite:iae.db";
+    // Defaults to iae.db in the working directory. Tests override this via the
+    // "iae.db.url" system property (see surefire config) so they never touch the
+    // real application database.
+    private static final String DB_URL =
+            System.getProperty("iae.db.url", "jdbc:sqlite:iae.db");
 
     private Connection connection;
 
