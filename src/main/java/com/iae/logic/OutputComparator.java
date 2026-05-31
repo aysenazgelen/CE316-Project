@@ -27,11 +27,6 @@ public class OutputComparator {
         return new ComparisonResult(false, buildDiff(normalizedExpected, normalizedActual));
     }
 
-    // private String normalize(String text) {
-    //     if (text == null) return "";
-    //     return text.replace("\r\n", "\n").stripTrailing();
-    // }
-
     private String normalize(String text) {
         if (text == null) return "";
         return text.lines()                     // split by any line ending
