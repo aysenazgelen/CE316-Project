@@ -22,7 +22,7 @@
 
                 <!-- back = E5C4 -->
                 <Button fx:id="backBtn" styleClass="toolbar-icon-btn" onAction="#handleBack"
-                        visible="false" managed="false" contentDisplay="GRAPHIC_ONLY">
+                        contentDisplay="GRAPHIC_ONLY">
                     <graphic><Label text="&#xE5C4;" styleClass="toolbar-icon"/></graphic>
                     <tooltip><Tooltip text="Go Back"/></tooltip>
                 </Button>

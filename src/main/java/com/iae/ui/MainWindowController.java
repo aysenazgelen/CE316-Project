@@ -104,6 +104,7 @@ public class MainWindowController {
 
     /* ── UI state ── */
     private Button activeTab = null;
+    private Button previousTab = null;
     private String currentProjectName = null;
     private String currentConfigName = null;
     private String submissionsDir = null;
@@ -834,12 +835,17 @@ public class MainWindowController {
 
     @FXML
     private void handleBack() {
-        // Back navigation is not yet implemented
+        Button target = (previousTab != null) ? previousTab : projectsTab;
+        if (target == projectsTab)         showProjectsView();
+        else if (target == submissionsTab) showSubmissionsView();
+        else if (target == analyticsTab)   showAnalyticsView();
+        else if (target == settingsTab)    showSettingsView();
     }
 
     
 
     private void setActiveTab(Button tab) {
+        previousTab = activeTab;
         if (activeTab != null)
             activeTab.getStyleClass().remove("sidebar-tab-active");
         activeTab = tab;
